@@ -1,0 +1,55 @@
+/* General Layout */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #f4f4f9;
+}
+
+/* TextArea and TextField */
+.text-area, .text-field {
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+    -fx-background-color: white;
+}
+
+/* Labels */
+.label {
+    -fx-font-weight: bold;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #0078d4;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8 15;
+    -fx-background-radius: 5;
+}
+.button:hover {
+    -fx-background-color: #005a9e;
+}
+
+/* HBox and VBox */
+.hbox, .vbox {
+    -fx-padding: 10;
+}
+
+/* Header */
+.hbox > .label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.default {
+    -fx-fill: black;
+    -fx-font-size: 14px;
+}
+
+.highlight {
+    -fx-fill: red;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-color: yellow;
+}
+
