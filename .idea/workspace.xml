@@ -4,11 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ba1762f-9230-40a9-81f6-088c641b40c9" name="Changes" comment="" />
+    <list default="true" id="8ba1762f-9230-40a9-81f6-088c641b40c9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/CustomData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/CustomData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/DataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/RegexProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/RegexProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/TextProcessingModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/TextProcessingModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/model/RegexObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/model/RegexObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/app.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/dashboard.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -20,22 +41,37 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2pAPyhQySmNn2Zp15lUdLGaV7S2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ListowelAdolwinMoro/SceneBuilder",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ListowelAdolwinMoro\text-processor\src\main\resources\listo\textprocessor\assets" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
