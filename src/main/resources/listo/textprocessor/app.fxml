@@ -87,7 +87,7 @@
             <VBox alignment="TOP_CENTER" spacing="20" style="-fx-padding: 20;">
                 <Label text="All Entries:" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
 
-                <TableView fx:id="entriesTableView" prefWidth="800" prefHeight="400" style="-fx-font-size: 14px; -fx-border-color: #ccc; -fx-border-width: 1px;">
+                <TableView fx:id="collectionsTableView" prefWidth="800" prefHeight="400" style="-fx-font-size: 14px; -fx-border-color: #ccc; -fx-border-width: 1px;">
                     <columns>
                         <TableColumn fx:id="titleColumn" text="Title" prefWidth="150" />
                         <TableColumn fx:id="regexInputColumn" text="Regex Input" prefWidth="200" />

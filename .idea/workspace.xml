@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ba1762f-9230-40a9-81f6-088c641b40c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/util/RegexUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/CustomData.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/DataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/model/RegexObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/model/RegexObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/app.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

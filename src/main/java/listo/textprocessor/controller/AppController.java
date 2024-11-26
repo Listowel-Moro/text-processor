@@ -34,15 +34,64 @@ public class AppController {
     @FXML
     private Button addCollectionButton;
 
-    private final RegexProcessor regexProcessor = new RegexProcessor();
-    private final DataManager dataManager = new DataManager();
+    @FXML
+    private TableView<RegexObject> collectionsTableView;
+    @FXML
+    private TableColumn<RegexObject, String> titleColumn;
+    @FXML
+    private TableColumn<RegexObject, String> regexInputColumn;
+    @FXML
+    private TableColumn<RegexObject, String> regexPatternColumn;
+    @FXML
+    private TableColumn<RegexObject, String> replaceTextColumn;
+    @FXML
+    private TableColumn<RegexObject, Void> actionsColumn;
 
+
+    private final DataManager dataManager = new DataManager();
     private boolean isUpdating = false;
     private int updatingKey = -1;
 
-    /**
-     * Handles the "Find Matches" button click.
-     */
+    @FXML
+    private void initialize() {
+        regexField.textProperty().addListener((observable, oldValue, newValue) -> {
+            highlightMatches();
+        });
+        replaceField.textProperty().addListener((observable, oldValue, newValue) -> {
+            highlightMatches();
+        });
+
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        regexInputColumn.setCellValueFactory(new PropertyValueFactory<>("inputText"));
+        regexPatternColumn.setCellValueFactory(new PropertyValueFactory<>("regexPattern"));
+        replaceTextColumn.setCellValueFactory(new PropertyValueFactory<>("replaceText"));
+
+        actionsColumn.setCellFactory(col -> new TableCell<RegexObject, Void>() {
+            private final Button updateButton = new Button("Update");
+            private final Button viewButton = new Button("View");
+            private final Button deleteButton = new Button("Delete");
+
+            {
+                updateButton.setOnAction(e -> handleUpdateEntry(getTableRow().getItem()));
+                viewButton.setOnAction(e -> handleViewEntry(getTableRow().getItem()));
+                deleteButton.setOnAction(e -> handleDeleteEntry(getTableRow().getItem()));
+            }
+
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || getTableRow() == null || getTableRow().getItem() == null) {
+                    setGraphic(null);
+                } else {
+                    HBox hbox = new HBox(10, viewButton, updateButton, deleteButton);
+                    setGraphic(hbox);
+                }
+            }
+        });
+
+        refreshCollections();
+    }
+
     @FXML
     private void handleFindMatches() {
         String inputText = textInputArea.getText();
@@ -80,30 +129,6 @@ public class AppController {
         }
     }
 
-    /**
-     * Handles the "Replace Text" button click.
-     */
-    @FXML
-    private void handleReplaceText() {
-        String inputText = textInputArea.getText();
-        String regexPattern = regexField.getText();
-        String replacementText = replaceField.getText();
-
-        if (inputText.isEmpty() || regexPattern.isEmpty()) {
-            resultArea.setText("Please provide input text and a regex pattern.");
-            return;
-        }
-
-        try {
-            String replacedText = regexProcessor.replaceText(inputText, regexPattern, replacementText);
-            textInputArea.setText(replacedText); // Update input area with replaced text
-            resultArea.setText("Text replaced successfully.");
-        } catch (PatternSyntaxException e) {
-            resultArea.setText("Invalid regex pattern: " + e.getMessage());
-        }
-    }
-
-
     private void highlightMatches() {
         String inputText = textInputArea.getText();
         String regexPattern = regexField.getText();
@@ -131,7 +156,6 @@ public class AppController {
             while (matcher.find()) {
                 matchCount++;
 
-                // Add plain text before the match
                 if (matcher.start() > lastMatchEnd) {
                     String beforeMatch = inputText.substring(lastMatchEnd, matcher.start());
                     Text beforeText = new Text(beforeMatch);
@@ -139,13 +163,11 @@ public class AppController {
                     highlightedTextFlow.getChildren().add(beforeText);
                 }
 
-                // Add the replacement text if any
                 String matchedText = matcher.group();
                 if (!replacementText.isEmpty()) {
-                    matchedText = replacementText;  // Replace the matched text with the replacement text
+                    matchedText = replacementText;
                 }
 
-                // Add highlighted or replaced matched text
                 Text displayedText = new Text(matchedText);
                 if (replacementText.isEmpty()) {
                     displayedText.setStyle("-fx-fill: red; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-color: yellow;");  // Highlighted text
@@ -157,19 +179,17 @@ public class AppController {
                 lastMatchEnd = matcher.end();
             }
 
-            // Add remaining plain text after the last match
             if (lastMatchEnd < inputText.length()) {
                 String afterMatch = inputText.substring(lastMatchEnd);
                 Text afterText = new Text(afterMatch);
-                afterText.setStyle("-fx-fill: black; -fx-font-size: 14px;");  // Normal text
+                afterText.setStyle("-fx-fill: black; -fx-font-size: 14px;");
                 highlightedTextFlow.getChildren().add(afterText);
             }
 
-            // Update the match count
             numMatches.setText(String.valueOf(matchCount));
         } catch (PatternSyntaxException e) {
             numMatches.setText("0");
-            highlightedTextFlow.getChildren().add(new Text(inputText));  // If regex is invalid, just show plain text
+            highlightedTextFlow.getChildren().add(new Text(inputText));
         }
     }
 
@@ -180,14 +200,14 @@ public class AppController {
         String replaceText = replaceField.getText();
 
         if (isUpdating) {
-            String title = dataManager.getEntry(updatingKey).getTitle();
-            dataManager.deleteEntry(updatingKey);
-            dataManager.addEntry(title, regexPattern, inputText, replaceText);
+            String title = dataManager.getCollection(updatingKey).getTitle();
+            dataManager.deleteCollection(updatingKey);
+            dataManager.addCollection(title, regexPattern, inputText, replaceText);
 
             isUpdating = false;
             updatingKey = -1;
             addCollectionButton.setText("Add to Collection");
-            refreshEntries();
+            refreshCollections();
 
             return;
         }
@@ -223,14 +243,14 @@ public class AppController {
                 if (title == null || title.isEmpty()) {
                     title = "Untitled Collection";
                 }
-                dataManager.addEntry(title, regexPattern, inputText, replaceText);
-                refreshEntries();
+                dataManager.addCollection(title, regexPattern, inputText, replaceText);
+                refreshCollections();
                 titleDialog.close();
             });
 
             skipButton.setOnAction(e -> {
-                dataManager.addEntry("Untitled collection", regexPattern, inputText, replaceText);
-                refreshEntries();
+                dataManager.addCollection("Untitled collection", regexPattern, inputText, replaceText);
+                refreshCollections();
                 titleDialog.close();
             });
 
@@ -239,69 +259,12 @@ public class AppController {
         }
     }
 
-
-@FXML
-private TableView<RegexObject> entriesTableView;
     @FXML
-    private TableColumn<RegexObject, String> titleColumn;
-    @FXML
-    private TableColumn<RegexObject, String> regexInputColumn;
-    @FXML
-    private TableColumn<RegexObject, String> regexPatternColumn;
-    @FXML
-    private TableColumn<RegexObject, String> replaceTextColumn;
-    @FXML
-    private TableColumn<RegexObject, Void> actionsColumn;
+    private void refreshCollections() {
+        collectionsTableView.getItems().clear();
 
-    @FXML
-    private void initialize() {
-        regexField.textProperty().addListener((observable, oldValue, newValue) -> {
-            highlightMatches();
-        });
-        replaceField.textProperty().addListener((observable, oldValue, newValue) -> {
-            highlightMatches();
-        });
-
-        // Initialize table columns
-        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
-        regexInputColumn.setCellValueFactory(new PropertyValueFactory<>("inputText"));
-        regexPatternColumn.setCellValueFactory(new PropertyValueFactory<>("regexPattern"));
-        replaceTextColumn.setCellValueFactory(new PropertyValueFactory<>("replaceText"));
-
-        // Add action buttons for each row
-        actionsColumn.setCellFactory(col -> new TableCell<RegexObject, Void>() {
-            private final Button updateButton = new Button("Update");
-            private final Button viewButton = new Button("View");
-            private final Button deleteButton = new Button("Delete");
-
-            {
-                updateButton.setOnAction(e -> handleUpdateEntry(getTableRow().getItem()));
-                viewButton.setOnAction(e -> handleViewEntry(getTableRow().getItem()));
-                deleteButton.setOnAction(e -> handleDeleteEntry(getTableRow().getItem()));
-            }
-
-            @Override
-            protected void updateItem(Void item, boolean empty) {
-                super.updateItem(item, empty);
-                if (empty || getTableRow() == null || getTableRow().getItem() == null) {
-                    setGraphic(null);
-                } else {
-                    HBox hbox = new HBox(10, viewButton, updateButton, deleteButton);
-                    setGraphic(hbox);
-                }
-            }
-        });
-
-        // Load entries into the table
-        refreshEntries();
-    }
-
-    @FXML
-    private void refreshEntries() {
-        entriesTableView.getItems().clear();  // Clear current entries
-
-        HashMap<Integer, RegexObject> entries = dataManager.getAllEntries();
-        entriesTableView.getItems().addAll(entries.values());  // Add all entries to the table
+        HashMap<Integer, RegexObject> entries = dataManager.getAllCollections();
+        collectionsTableView.getItems().addAll(entries.values());
     }
 
     @FXML
@@ -332,8 +295,8 @@ private TableView<RegexObject> entriesTableView;
     @FXML
     private void handleDeleteEntry(RegexObject entry) {
         if (entry != null) {
-            dataManager.deleteEntry(entry.getKey());
-            refreshEntries();
+            dataManager.deleteCollection(entry.getKey());
+            refreshCollections();
         }
     }
 
