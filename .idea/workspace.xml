@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ba1762f-9230-40a9-81f6-088c641b40c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/util/RegexUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/CustomData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/CustomData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/DataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/RegexProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/RegexProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/TextProcessingModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/controller/TextProcessingModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/listo/textprocessor/model/RegexObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listo/textprocessor/model/RegexObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/app.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listo/textprocessor/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,21 +49,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ListowelAdolwinMoro/SceneBuilder",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ListowelAdolwinMoro/SceneBuilder&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ListowelAdolwinMoro\text-processor\src\main\resources\listo\textprocessor\assets" />

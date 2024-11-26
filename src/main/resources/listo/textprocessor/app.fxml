@@ -15,8 +15,11 @@
 <?import javafx.scene.control.TabPane?>
 
 
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
 <VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="listo.textprocessor.controller.AppController">
-    <TabPane >
+    <TabPane fx:id="tabPane">
         <Tab text="Regex matching">
             <BorderPane >
                 <top>
@@ -30,12 +33,12 @@
                         <!-- Wrap the content inside a ScrollPane to allow scrolling -->
                         <HBox maxWidth="950" minHeight="1000">
                             <ScrollPane minHeight="1000" fitToHeight="false" fitToWidth="true" hbarPolicy="AS_NEEDED" vbarPolicy="AS_NEEDED">
-                                <VBox alignment="CENTER" prefHeight="400.0" prefWidth="990.0" spacing="15" style="-fx-padding: 20;">
+                                <VBox alignment="TOP_LEFT" prefHeight="500.0" prefWidth="990.0" spacing="15" style="-fx-padding: 20;">
                                     <VBox spacing="10">
                                         <Label style="-fx-font-size: 14px;" text="Input Text:" />
                                     </VBox>
                                     <!-- TextArea for input -->
-                                    <TextArea fx:id="textInputArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="171.0" prefWidth="775.0" promptText="Enter your text here..." style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 14px;" wrapText="true" />
+                                    <TextArea fx:id="textInputArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="775.0" promptText="Enter your text here..." style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 14px;" wrapText="true" />
 
                                     <VBox spacing="10">
                                         <Label style="-fx-font-size: 14px;" text="Output:" />
@@ -72,8 +75,8 @@
                             </children>
                             <HBox style="-fx-padding:0 0 0 15;" spacing="10">
                                 <Button text="List view" onAction="#handleFindMatches"/>
-                                <Button text="List view" />
-                                <Button text="List view" />
+                                <Button fx:id="addCollectionButton" text="Add to Collection" onAction="#handleAddEntryToCollection"/>
+                                <Button text="View Collections" onAction="#viewCollections"/>
                             </HBox>
                         </VBox>
                     </HBox>
@@ -81,10 +84,23 @@
             </BorderPane>
         </Tab>
         <Tab text="Data Manipulation">
-            <VBox spacing="10">
+            <VBox alignment="TOP_CENTER" spacing="20" style="-fx-padding: 20;">
+                <Label text="All Entries:" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
 
+                <TableView fx:id="entriesTableView" prefWidth="800" prefHeight="400" style="-fx-font-size: 14px; -fx-border-color: #ccc; -fx-border-width: 1px;">
+                    <columns>
+                        <TableColumn fx:id="titleColumn" text="Title" prefWidth="150" />
+                        <TableColumn fx:id="regexInputColumn" text="Regex Input" prefWidth="200" />
+                        <TableColumn fx:id="regexPatternColumn" text="Regex Pattern" prefWidth="200" />
+                        <TableColumn fx:id="replaceTextColumn" text="Replace Text" prefWidth="150" />
+                        <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="200" />
+                    </columns>
+                </TableView>
             </VBox>
         </Tab>
+
+
+
     </TabPane>
 </VBox>
 

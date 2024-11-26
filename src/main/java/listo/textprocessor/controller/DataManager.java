@@ -6,17 +6,17 @@ import java.util.HashMap;
 public class DataManager {
     private final HashMap<Integer, RegexObject> dataMap = new HashMap<>();
 
-    public void addEntry(String regexPattern, String inputText, String replaceText) {
-        RegexObject value = new RegexObject(regexPattern, inputText, replaceText);
+    public void addEntry(String title, String regexPattern, String inputText, String replaceText) {
+        RegexObject value = new RegexObject(title,inputText, regexPattern, replaceText);
         int key = value.hashCode();
         dataMap.put(key, value);
     }
 
-    public void updateEntry(int key, String newRegexPattern, String newInputText, String newReplaceText) {
-        RegexObject regexObject = dataMap.get(key);
-        regexObject.update(newRegexPattern, newInputText, newReplaceText);
-        dataMap.replace(key, regexObject);
-    }
+//    public void updateEntry(int key, String newRegexPattern, String newInputText, String newReplaceText) {
+//        RegexObject regexObject = dataMap.get(key);
+//        regexObject.update(newRegexPattern, newInputText, newReplaceText);
+//        dataMap.replace(key, regexObject);
+//    }
 
     public void deleteEntry(int key) {
         dataMap.remove(key);

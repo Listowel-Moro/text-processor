@@ -13,8 +13,8 @@ public class Main extends Application {
         //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 
         primaryStage.setTitle("Text Processor");
-        primaryStage.setHeight(600);
-        primaryStage.setWidth(800);
+        primaryStage.setHeight(650);
+        primaryStage.setWidth(950);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

@@ -53,3 +53,30 @@
     -fx-background-color: yellow;
 }
 
+/* Style the TableView */
+.table-view {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+}
+
+/* Style the Table columns */
+.table-column {
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+}
+
+/* Style the buttons */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-font-size: 12px;
+    -fx-padding: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+
